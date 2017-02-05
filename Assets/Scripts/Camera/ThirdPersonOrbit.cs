@@ -38,9 +38,14 @@ public class ThirdPersonOrbit : MonoBehaviour
     private float actualDistance;
 
     [HideInInspector]
-    public float Margin = 0.2f;
+    public float Margin = 0.3f;
     [HideInInspector]
     public float OffsetY = 0.1f;
+
+    private Vector3 prevPositon;
+    private Quaternion prevRotation;
+    [Tooltip("Time in seconds before the camera starts auto following, after movement")]
+    public float TimeBeforeFollow = 1.5f;
 
     void Start()
     {
@@ -49,6 +54,9 @@ public class ThirdPersonOrbit : MonoBehaviour
         x = angles.y;
         y = angles.x;
         actualDistance = PreferredDistance;
+
+        prevPositon = Target.position;
+        prevRotation = Target.rotation;
 
         // this should probably be moved to a seperate helper class that allows us to determine what kind of controller we are using, if any
         // right now we're only checking if there is ANY controller plugged in and assuming it is an Xbox 360 controller
@@ -94,6 +102,19 @@ public class ThirdPersonOrbit : MonoBehaviour
         }
         else
         {
+            Quaternion rotation2 = Target.rotation;
+            Vector3 position2 = Target.position;
+            bool follow = false;
+            // these checks wont work, we need to use a lambda since it's basically float comparison
+            if (prevPositon != Target.position && prevRotation != Target.rotation)
+            {
+                Debug.Log("Should follow");
+                rotation2 = Quaternion.Slerp(prevRotation, Target.rotation, 0.5f);
+                Vector3 negDistance2 = new Vector3(0.0f, OffsetY, -actualDistance);
+                position2 = rotation2 * negDistance2 + Target.position;
+                follow = true;
+            }
+
             Debug.DrawLine(Target.position, transform.position, Color.green);
 
             // when zooming out we're gonna check a little further ahead than the total distance, to see if we can actually zoom out or not
@@ -107,6 +128,9 @@ public class ThirdPersonOrbit : MonoBehaviour
             Vector3 negDistance = new Vector3(0.0f, OffsetY, -actualDistance);
             Vector3 position = rotation * negDistance + Target.position;
             
+            //transform.rotation = follow ? rotation2 : rotation;
+            //transform.position = follow ? position2 : position;
+
             transform.rotation = rotation;
             transform.position = position;
         }
