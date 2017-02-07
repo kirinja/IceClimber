@@ -79,6 +79,23 @@ public class ThirdPersonOrbit : MonoBehaviour
             y -= Input.GetAxisRaw("Mouse Y") * VerticalSensitivity * Time.deltaTime * (InvertY ? 1 : -1);
         }
 
+        if (prevPositon != Target.position && prevRotation != Target.rotation)
+        {
+            float x2 = Mathf.Lerp(prevRotation.x, Target.rotation.x, 0.5f);
+            float y2 = Mathf.Lerp(prevRotation.y, Target.rotation.y, 0.5f);
+
+            Quaternion rotation2 = Quaternion.Slerp(prevRotation, Target.rotation, 0.5f);
+            //Debug.Log(rotation2.x + " - " + rotation2.y + " - " + rotation2.z);
+
+            //Debug.Log(x2 + " - " + y2);
+
+            // this is more correct but still not good enough
+            // the camera is still not auto following correctly
+            // might have to look up smooth follow for third person camera
+            x += y2;
+            y -= x2;
+        }
+
         y = ClampAngle(y, ClampCameraMin, ClampCameraMax);
         Quaternion rotation = Quaternion.Euler(y, x, 0);
 
@@ -108,7 +125,7 @@ public class ThirdPersonOrbit : MonoBehaviour
             // these checks wont work, we need to use a lambda since it's basically float comparison
             if (prevPositon != Target.position && prevRotation != Target.rotation)
             {
-                Debug.Log("Should follow");
+                //Debug.Log("Should follow");
                 rotation2 = Quaternion.Slerp(prevRotation, Target.rotation, 0.5f);
                 Vector3 negDistance2 = new Vector3(0.0f, OffsetY, -actualDistance);
                 position2 = rotation2 * negDistance2 + Target.position;
@@ -134,6 +151,9 @@ public class ThirdPersonOrbit : MonoBehaviour
             transform.rotation = rotation;
             transform.position = position;
         }
+
+        prevRotation = Target.rotation;
+        prevPositon = Target.position;
     }
 
     public static float ClampAngle(float angle, float min, float max)
