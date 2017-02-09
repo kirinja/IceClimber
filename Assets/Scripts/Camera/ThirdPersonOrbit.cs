@@ -79,6 +79,12 @@ public class ThirdPersonOrbit : MonoBehaviour
             y -= Input.GetAxisRaw("Mouse Y") * VerticalSensitivity * Time.deltaTime * (InvertY ? 1 : -1);
         }
 
+        // this rotates forever once it has started, need to think over
+        float x2 = Mathf.Lerp(prevRotation.x, Target.rotation.x, 0.5f);
+        float y2 = Mathf.Lerp(prevRotation.y, Target.rotation.y, 0.5f);
+        x += y2;
+        y -= x2;
+        /*
         if (prevPositon != Target.position && prevRotation != Target.rotation)
         {
             float x2 = Mathf.Lerp(prevRotation.x, Target.rotation.x, 0.5f);
@@ -94,7 +100,7 @@ public class ThirdPersonOrbit : MonoBehaviour
             // might have to look up smooth follow for third person camera
             x += y2;
             y -= x2;
-        }
+        }*/
 
         y = ClampAngle(y, ClampCameraMin, ClampCameraMax);
         Quaternion rotation = Quaternion.Euler(y, x, 0);
