@@ -65,6 +65,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         void UpdateAnimator(Vector3 move)
         {
             m_Animator.SetBool("OnGround", m_IsGrounded);
+            m_Animator.SetBool("Walking", Mathf.Abs(m_ForwardAmount) > 0);
         }
 
 
@@ -109,13 +110,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
             {
                 m_IsGrounded = true;
+                m_GroundNormal = Vector3.up;
             }
             else
             {
                 m_IsGrounded = false;
+                m_GroundNormal = hitInfo.normal;
             }
 
-            m_GroundNormal = hitInfo.normal;
+            
         }
     }
 }
