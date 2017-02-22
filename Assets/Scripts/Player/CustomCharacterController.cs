@@ -8,22 +8,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     public class CustomCharacterController : MonoBehaviour
     {
         [SerializeField]
-        float m_MovingTurnSpeed = 360;
+        public float m_MovingTurnSpeed = 360;
         [SerializeField]
-        float m_StationaryTurnSpeed = 180;
-        [SerializeField]
-        float m_JumpPower = 12f;
-        [Range(1f, 4f)]
-        [SerializeField]
-        float m_GravityMultiplier = 2f;
+        public float m_StationaryTurnSpeed = 180;
         [SerializeField]
         float m_MoveSpeedMultiplier = 1f;
         [SerializeField]
         float m_GroundCheckDistance = 0.3f;
 
-        Rigidbody m_Rigidbody;
-        Animator m_Animator;
-        bool m_IsGrounded;
+        public float MaxJumpLength;
+        public float MaxJumpHeight;
+        public float MaxAirSpeed;
+        
+
+        new private Rigidbody rigidbody;
+        private Animator animator;
+        private bool isGrounded;
         float m_OrigGroundCheckDistance;
         float m_TurnAmount;
         float m_ForwardAmount;
@@ -31,10 +31,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void Start()
         {
-            m_Animator = GetComponent<Animator>();
-            m_Rigidbody = GetComponent<Rigidbody>();
+            animator = GetComponent<Animator>();
+            rigidbody = GetComponent<Rigidbody>();
 
-            m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
             m_OrigGroundCheckDistance = m_GroundCheckDistance;
         }
 
@@ -49,7 +49,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             ApplyTurnRotation();
             
-            if (m_IsGrounded)
+            if (isGrounded)
             {
                 HandleGroundedMovement(jump, move);
             }
@@ -64,17 +64,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void UpdateAnimator(Vector3 move)
         {
-            m_Animator.SetBool("OnGround", m_IsGrounded);
-            m_Animator.SetBool("Walking", Mathf.Abs(m_ForwardAmount) > 0);
+            animator.SetBool("OnGround", isGrounded);
+            animator.SetBool("Walking", Mathf.Abs(m_ForwardAmount) > 0);
         }
 
 
         void HandleAirborneMovement()
         {
-            Vector3 extraGravityForce = (Physics.gravity * m_GravityMultiplier) - Physics.gravity;
-            m_Rigidbody.AddForce(extraGravityForce);
+            Vector3 gravity = new Vector3(0f, (-2 * MaxJumpHeight * Mathf.Pow(MaxAirSpeed, 2)) / (Mathf.Pow(MaxJumpLength / 2, 2)), 0f);
+            rigidbody.AddForce(gravity);
 
-            m_GroundCheckDistance = m_Rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
+            m_GroundCheckDistance = rigidbody.velocity.y < 0 ? m_OrigGroundCheckDistance : 0.01f;
         }
 
 
@@ -82,15 +82,23 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (jump)
             {
-                m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
-                m_IsGrounded = false;
-                m_GroundCheckDistance = 0.1f;
+                Jump();
             }
             else
             {
                 Vector3 v = new Vector3(0, move.y, move.z * m_MoveSpeedMultiplier);
-                m_Rigidbody.velocity = transform.TransformDirection(v);
+                rigidbody.velocity = transform.TransformDirection(v);
             }
+        }
+
+        private void Jump()
+        {
+            float jumpVelocity = (2 * MaxJumpHeight * MaxAirSpeed) / (MaxJumpLength / 2);
+            Vector3 horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z);
+            horizontalVelocity = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z).normalized * Mathf.Min(horizontalVelocity.magnitude, MaxAirSpeed);
+            rigidbody.velocity = new Vector3(horizontalVelocity.x, jumpVelocity, horizontalVelocity.z);
+            isGrounded = false;
+            m_GroundCheckDistance = 0.1f;
         }
 
         void ApplyTurnRotation()
@@ -109,12 +117,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (Physics.Raycast(transform.position + (Vector3.up * 0.1f), Vector3.down, out hitInfo, m_GroundCheckDistance))
             {
-                m_IsGrounded = true;
+                isGrounded = true;
                 m_GroundNormal = Vector3.up;
             }
             else
             {
-                m_IsGrounded = false;
+                isGrounded = false;
                 m_GroundNormal = hitInfo.normal;
             }
 
