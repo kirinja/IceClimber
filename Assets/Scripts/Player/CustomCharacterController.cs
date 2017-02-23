@@ -55,7 +55,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             UpdateAnimator(move);
         }
 
-
         void UpdateAnimator(Vector3 move)
         {
             animator.SetBool("OnGround", isGrounded);
@@ -130,11 +129,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void HandleAirborneMovement(Vector3 move)
         {
-            if (forwardAmount > 0)
+            Debug.Log(forwardAmount);
+            if (Mathf.Abs(forwardAmount) > 0f)
             {
                 Vector3 localVelocity = transform.InverseTransformDirection(rigidbody.velocity);
                 localVelocity.z += Time.deltaTime * Mathf.Sign(forwardAmount) * AirAcceleration;
                 if (Mathf.Abs(localVelocity.z) > MaxAirSpeed) localVelocity.z = MaxAirSpeed * Mathf.Sign(localVelocity.z);
+                rigidbody.velocity = transform.TransformDirection(localVelocity);
+            }
+            if (Mathf.Abs(turnAmount) > 0f)
+            {
+                Vector3 localVelocity = transform.InverseTransformDirection(rigidbody.velocity);
+                localVelocity.x += Time.deltaTime * Mathf.Sign(-turnAmount) * AirAcceleration;
+                if (Mathf.Abs(localVelocity.x) > MaxAirSpeed) localVelocity.x = MaxAirSpeed * Mathf.Sign(localVelocity.x);
                 rigidbody.velocity = transform.TransformDirection(localVelocity);
             }
 
