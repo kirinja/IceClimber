@@ -12,6 +12,10 @@ public class ThirdPersonOrbit : MonoBehaviour
     public float HorizontalSensitivity = 40.0f;
     [Tooltip("Camera speed vertically")]
     public float VerticalSensitivity = 40.0f;
+    [Tooltip("Camera speed horizontally (for gamepad)")]
+    public float HorizontalSensitivityGamepad = 40.0f;
+    [Tooltip("Camera speed vertically (for gamepad)")]
+    public float VerticalSensitivityGamepad = 40.0f;
 
     [Tooltip("The minimum angle the camera can move vertically, measured in degrees")]
     public float ClampCameraMin = -15f;
@@ -122,8 +126,8 @@ public class ThirdPersonOrbit : MonoBehaviour
 
         if (isUsingController)
         {
-            x += Input.GetAxis("Right Horizontal") * HorizontalSensitivity * Time.deltaTime * (InvertX ? 1 : -1);
-            y -= Input.GetAxis("Right Vertical") * VerticalSensitivity * Time.deltaTime * (InvertY ? 1 : -1);
+            x += Input.GetAxis("Right Horizontal") * HorizontalSensitivityGamepad * Time.deltaTime * (InvertX ? 1 : -1);
+            y -= Input.GetAxis("Right Vertical") * VerticalSensitivityGamepad * Time.deltaTime * (InvertY ? 1 : -1);
         }
         else
         {
