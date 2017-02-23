@@ -17,6 +17,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public float MovingTurnSpeed = 360;
         public float StationaryTurnSpeed = 180;
         public float GroundCheckDistance = 0.3f;
+        public Attack HammerAttack;
         
         new private Rigidbody rigidbody;
         private Animator animator;
@@ -53,6 +54,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             UpdateAnimator(move);
+        }
+
+        public void Attack()
+        {
+            HammerAttack.Activate();
         }
 
         void UpdateAnimator(Vector3 move)
@@ -129,7 +135,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         void HandleAirborneMovement(Vector3 move)
         {
-            Debug.Log(forwardAmount);
             if (Mathf.Abs(forwardAmount) > 0f)
             {
                 Vector3 localVelocity = transform.InverseTransformDirection(rigidbody.velocity);

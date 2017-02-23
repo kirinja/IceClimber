@@ -463,8 +463,9 @@ GameObject:
   - component: {fileID: 136550599118492534}
   - component: {fileID: 114679380603477568}
   - component: {fileID: 114789325037327262}
+  - component: {fileID: 114684216315949734}
   m_Layer: 0
-  m_Name: T Mod
+  m_Name: p_character_popo
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,6 +1017,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0870b5fe76041414fa2d2825ee681a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114684216315949734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1990606741600464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e62918ac44f64c4b900bbaa6f21c0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 0
+  health: 0
 --- !u!114 &114789325037327262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1037,6 +1051,7 @@ MonoBehaviour:
   MovingTurnSpeed: 360
   StationaryTurnSpeed: 180
   GroundCheckDistance: 0.3
+  HammerAttack: {fileID: 0}
 --- !u!136 &136550599118492534
 CapsuleCollider:
   m_ObjectHideFlags: 1
