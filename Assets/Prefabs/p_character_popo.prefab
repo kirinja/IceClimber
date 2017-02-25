@@ -345,6 +345,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1747937767404050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4094661474209690}
+  - component: {fileID: 135940112689886798}
+  - component: {fileID: 114232282471912314}
+  m_Layer: 0
+  m_Name: HammerAttack
+  m_TagString: PlayerAttack
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1774481215745582
 GameObject:
   m_ObjectHideFlags: 1
@@ -553,6 +570,19 @@ Transform:
   - {fileID: 4868183848550228}
   m_Father: {fileID: 4661431210720852}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4094661474209690
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747937767404050}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.013999939, y: 0.29299998, z: -0.2712555}
+  m_LocalScale: {x: 0.43474486, y: 0.43474486, z: 0.43474486}
+  m_Children: []
+  m_Father: {fileID: 4661431210720852}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4102194237627134
 Transform:
@@ -769,13 +799,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990606741600464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.118835, y: 13.5, z: 37.912296}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 80.9, y: 43.3, z: 27.1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4002622996233180}
   - {fileID: 4381535741415874}
   - {fileID: 4052254502192874}
   - {fileID: 4810303153323556}
+  - {fileID: 4094661474209690}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1006,6 +1037,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114232282471912314
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747937767404050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b9391b1be108b4293100000014067a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 20
+  AttackTime: 0.4
 --- !u!114 &114679380603477568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1028,7 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e62918ac44f64c4b900bbaa6f21c0ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 0
+  MaxHealth: 100
   health: 0
 --- !u!114 &114789325037327262
 MonoBehaviour:
@@ -1041,17 +1085,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dcf583140a17bc45a4ef47c8808f8dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxGroundSpeed: 3
+  MaxGroundSpeed: 12
   GroundAcceleration: 3
-  FrictionDeacceleration: 3
-  MaxAirSpeed: 2
-  AirAcceleration: 2
-  MaxJumpLength: 6.1
-  MaxJumpHeight: 4.2
+  FrictionDeacceleration: 55
+  MaxAirSpeed: 4
+  AirAcceleration: 10
+  MaxJumpLength: 8
+  MaxJumpHeight: 12
   MovingTurnSpeed: 360
   StationaryTurnSpeed: 180
   GroundCheckDistance: 0.3
-  HammerAttack: {fileID: 0}
+  HammerAttack: {fileID: 114232282471912314}
+--- !u!135 &135940112689886798
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1747937767404050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136550599118492534
 CapsuleCollider:
   m_ObjectHideFlags: 1
