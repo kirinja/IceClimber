@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,9 @@ public class HUDSystem: MonoBehaviour
 
     public GameObject FullHeart;
     public GameObject HalfHeart;
+    public GameObject ThreeQuarterHeart;
+    public GameObject OneQuarterHeart;
+    public GameObject EmptyHeart;
     public int HealthPerHeart;
     public float SpacingX;
 
@@ -27,7 +32,7 @@ public class HUDSystem: MonoBehaviour
 	{
         hearts = new GameObject[10];
         levelFruitCount = 10;
-        CalculateHealth(GameObject.FindGameObjectWithTag("Player").GetComponent<LivingCharacter>().MaxHealth);
+        CalculateHealth(GameObject.FindGameObjectWithTag("Player").GetComponent<LivingCharacter>().health, GameObject.FindGameObjectWithTag("Player").GetComponent<LivingCharacter>().MaxHealth);
         SetHeight(0);
         CountFruit(0);
     }
@@ -35,8 +40,9 @@ public class HUDSystem: MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-	}
+        // hackish, might be detremental to performance
+        SetHeight(GameObject.FindGameObjectWithTag("Player").transform.position.y);
+    }
 
     private void ClearHearts()
     {
@@ -48,17 +54,38 @@ public class HUDSystem: MonoBehaviour
     }
 
     // we need a way to recalculate the HUD, currently we're only adding stuff but we cant remove them
-    public void CalculateHealth(int health)
+    public void CalculateHealth(int health, int max)
     {
         ClearHearts();
 
-        // this is all kinda hackishly done
-        int fullhearts = health / HealthPerHeart;
-        int halfhearts = health - fullhearts * HealthPerHeart;
-        halfhearts = (halfhearts * 2) / HealthPerHeart;
+        int half = HealthPerHeart / 2;
+        int oneQuart = HealthPerHeart / 4;
+        int threeQuart = oneQuart * 3;
         
+        // first check how many full hearts
+        int fullH = health / HealthPerHeart;
+
+        // then check how many three quarts out of the remainder
+        int remainder = health - (fullH * HealthPerHeart);
+        int threeQh = remainder / threeQuart;
+
+        // if the three quarts value is above 1 then we can skip the rest of the calculations
+        int halfH = 0;
+        int oneQh = 0;
+        if (threeQh <= 0)
+        {
+            // check how many half hearts remains
+            halfH = remainder / half;
+            if (halfH <= 0)
+                oneQh = remainder / oneQuart;
+        }
+
+        // finally we need to calculate how many empty hearts we need to show (we can do this by comparing the current health to the max value)
+        int emptyH = (max - health) / HealthPerHeart;
+
+        // next we create and place the elements
         int counter = 0;
-        for (int i = 0; i < fullhearts; i++)
+        for (int i = 0; i < fullH; i++)
         {
             var obj = Instantiate(FullHeart);
             obj.transform.SetParent(transform);
@@ -66,9 +93,33 @@ public class HUDSystem: MonoBehaviour
             hearts[counter] = obj;
             counter++;
         }
-        for (int j = 0; j < halfhearts; j++)
+        for (int i = 0; i < threeQh; i++)
+        {
+            var obj = Instantiate(ThreeQuarterHeart);
+            obj.transform.SetParent(transform);
+            obj.transform.position = new Vector3((50 * counter) + (SpacingX * counter), transform.position.y * 2, 0);
+            hearts[counter] = obj;
+            counter++;
+        }
+        for (int i = 0; i < halfH; i++)
         {
             var obj = Instantiate(HalfHeart);
+            obj.transform.SetParent(transform);
+            obj.transform.position = new Vector3((50 * counter) + (SpacingX * counter), transform.position.y * 2, 0);
+            hearts[counter] = obj;
+            counter++;
+        }
+        for (int i = 0; i < oneQh; i++)
+        {
+            var obj = Instantiate(OneQuarterHeart);
+            obj.transform.SetParent(transform);
+            obj.transform.position = new Vector3((50 * counter) + (SpacingX * counter), transform.position.y * 2, 0);
+            hearts[counter] = obj;
+            counter++;
+        }
+        for (int i = 0; i < emptyH; i++)
+        {
+            var obj = Instantiate(EmptyHeart);
             obj.transform.SetParent(transform);
             obj.transform.position = new Vector3((50 * counter) + (SpacingX * counter), transform.position.y * 2, 0);
             hearts[counter] = obj;
@@ -79,7 +130,7 @@ public class HUDSystem: MonoBehaviour
     // this can simply be the Y position of the player
     public void SetHeight(float height)
     {
-        HeightText.text = "Height: " + height + " m";
+        HeightText.text = "Height: " + height.ToString("F") + " m";
     }
 
     public void CountFruit(int amount)

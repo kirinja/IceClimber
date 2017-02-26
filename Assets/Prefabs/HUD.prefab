@@ -208,6 +208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FullHeart: {fileID: 1532543643972454, guid: a4233090cb712eb4aaad353cace68f9e, type: 2}
   HalfHeart: {fileID: 1126718800587452, guid: 93b0c8d5aadef2f499e1bef74e6d421f, type: 2}
+  ThreeQuarterHeart: {fileID: 1170332706851892, guid: 0437697dca7b7da46a3270b750a2e22b,
+    type: 2}
+  OneQuarterHeart: {fileID: 1726968812976932, guid: 96c65045f4c860c49b85a032007b5e77,
+    type: 2}
+  EmptyHeart: {fileID: 1366885251547560, guid: d1bc7b808f8e6eb4dab64c4280a4b2e9, type: 2}
   HealthPerHeart: 20
   SpacingX: 10
   HeightText: {fileID: 114442907691634574}

@@ -11,8 +11,14 @@ public class LivingCharacter : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        health = MaxHealth;
+        //health = MaxHealth;
 	}
+
+    // changed to Awake instead of Start since HUD need this to be calculated before it runs (Awake runs before Start)
+    void Awake()
+    {
+        health = MaxHealth;
+    }
 	
 	// Update is called once per frame
 	void Update () {
