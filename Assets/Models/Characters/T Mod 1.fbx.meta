@@ -1,0 +1,700 @@
+fileFormatVersion: 2
+guid: 3621a175e4c084c40a963bb872248d34
+timeCreated: 1488395738
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: nurbsCircle1
+    100002: //RootNode
+    100004: UvIceMan:body
+    100006: UvIceMan:boy:leg3
+    100008: UvIceMan:Foot_left
+    100010: UvIceMan:Foot_right
+    100012: UvIceMan:Hand_Left
+    100014: UvIceMan:Hand_Right
+    100016: UvIceMan:Head
+    100018: UvIceMan:joint11
+    100020: UvIceMan:joint11 1
+    100022: UvIceMan:joint12
+    100024: UvIceMan:joint12 1
+    100026: UvIceMan:joint13
+    100028: UvIceMan:joint13 1
+    100030: UvIceMan:joint2
+    100032: UvIceMan:joint7
+    100034: UvIceMan:joint7 1
+    100036: UvIceMan:joint8
+    100038: UvIceMan:joint8 1
+    100040: UvIceMan:joint9
+    100042: UvIceMan:joint9 1
+    100044: UvIceMan:root
+    100046: UvIceMan:spine
+    400000: nurbsCircle1
+    400002: //RootNode
+    400004: UvIceMan:body
+    400006: UvIceMan:boy:leg3
+    400008: UvIceMan:Foot_left
+    400010: UvIceMan:Foot_right
+    400012: UvIceMan:Hand_Left
+    400014: UvIceMan:Hand_Right
+    400016: UvIceMan:Head
+    400018: UvIceMan:joint11
+    400020: UvIceMan:joint11 1
+    400022: UvIceMan:joint12
+    400024: UvIceMan:joint12 1
+    400026: UvIceMan:joint13
+    400028: UvIceMan:joint13 1
+    400030: UvIceMan:joint2
+    400032: UvIceMan:joint7
+    400034: UvIceMan:joint7 1
+    400036: UvIceMan:joint8
+    400038: UvIceMan:joint8 1
+    400040: UvIceMan:joint9
+    400042: UvIceMan:joint9 1
+    400044: UvIceMan:root
+    400046: UvIceMan:spine
+    4300000: UvIceMan:boy:leg3
+    7400000: Take 001
+    7400002: jump
+    7400004: Landing
+    7400006: idle
+    7400008: running
+    7400010: attack01
+    7400012: attack02
+    9500000: //RootNode
+    13700000: UvIceMan:boy:leg3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: -1
+      lastFrame: 230
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Landing
+      takeName: Take 001
+      firstFrame: 20
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: idle
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: running
+      takeName: Take 001
+      firstFrame: 70
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack01
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack02
+      takeName: Take 001
+      firstFrame: 160
+      lastFrame: 210
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: nurbsCircle1
+        weight: 1
+      - path: UvIceMan:boy:leg3
+        weight: 1
+      - path: UvIceMan:root
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_left/UvIceMan:joint11/UvIceMan:joint12/UvIceMan:joint13
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:Foot_right/UvIceMan:joint11 1/UvIceMan:joint12
+          1/UvIceMan:joint13 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Left/UvIceMan:joint7/UvIceMan:joint8/UvIceMan:joint9
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Hand_Right/UvIceMan:joint7
+          1/UvIceMan:joint8 1/UvIceMan:joint9 1
+        weight: 1
+      - path: UvIceMan:root/UvIceMan:joint2/UvIceMan:spine/UvIceMan:body/UvIceMan:Head
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
