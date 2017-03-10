@@ -5,13 +5,18 @@ using UnityEngine;
 public class Attack : MonoBehaviour {
 
     public int Damage;
-    public float AttackTime;
+    public float HitboxDuration;
+    public float CoolDown;
 
     private bool active;
+    private bool onCooldown;
     private float timeActive;
+    private float coolDownTime;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
+	    onCooldown = false;
 	}
 	
 	// Update is called once per frame
@@ -19,16 +24,28 @@ public class Attack : MonoBehaviour {
 		if (active)
         {
             timeActive += Time.deltaTime;
-            if (timeActive >= AttackTime)
+            if (timeActive >= HitboxDuration)
             {
                 Deactivate();
             }
         }
+	    if (onCooldown)
+	    {
+	        coolDownTime += Time.deltaTime;
+	        if (coolDownTime >= CoolDown)
+	        {
+	            onCooldown = false;
+	        }
+	    }
 	}
 
-    public void Activate()
+    public bool CanActivate { get { return !onCooldown; } }
+
+    public void ActivateAttack()
     {
         active = true;
+        //onCooldown = true;
+        coolDownTime = 0f;
         timeActive = 0f;
     }
 
@@ -37,11 +54,12 @@ public class Attack : MonoBehaviour {
         active = false;
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (active && other.CompareTag("Enemy"))
         {
             other.GetComponent<LivingCharacter>().Hurt(Damage);
+            active = false;
         }
     }
 }

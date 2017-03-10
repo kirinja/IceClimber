@@ -58,7 +58,13 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         public void Attack()
         {
-            HammerAttack.Activate();
+
+            //Debug.Log("Attacking!");
+            if (HammerAttack.CanActivate)
+            {
+                HammerAttack.ActivateAttack();
+                animator.SetTrigger("Attack");
+            }
         }
 
         void UpdateAnimator(Vector3 move)

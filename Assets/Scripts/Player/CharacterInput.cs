@@ -7,22 +7,22 @@ namespace UnityStandardAssets.Characters.ThirdPerson
     [RequireComponent(typeof(CustomCharacterController))]
     public class CharacterInput : MonoBehaviour
     {
-        private CustomCharacterController m_Character;
-        private bool m_Jump;         
+        private CustomCharacterController character;
+        private bool jump;         
 
         private void Start()
         {
-            m_Character = GetComponent<CustomCharacterController>();
+            character = GetComponent<CustomCharacterController>();
         }
 
 
         private void Update()
         {
-            if (!m_Jump)
+            if (!jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                jump = Input.GetButtonDown("Jump");
             }
-            if (CrossPlatformInputManager.GetButtonDown("Attack")) m_Character.Attack();
+            if (Input.GetButtonDown("Attack")) character.Attack();
         }
 
         
@@ -31,8 +31,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = -CrossPlatformInputManager.GetAxis("Vertical"); // Should not be inverted, but model orientation is wrong atm
             
-            m_Character.Move(m_Jump, h, v);
-            m_Jump = false;
+            character.Move(jump, h, v);
+            jump = false;
         }
     }
 }
