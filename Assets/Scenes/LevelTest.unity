@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4508214, g: 0.50073993, b: 0.57469255, a: 1}
+  m_IndirectSpecularColor: {r: 0.45082176, g: 0.5007408, b: 0.574693, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1931,7 +1931,7 @@ ParticleSystem:
   m_GameObject: {fileID: 773266022}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -5371,8 +5371,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1104310230}
-  m_LocalRotation: {x: 0.40069255, y: 0.21339421, z: 0.09653222, w: -0.88577086}
-  m_LocalPosition: {x: 79.35993, y: -10.319504, z: 27.419376}
+  m_LocalRotation: {x: -0.031819757, y: 0.33608297, z: 0.011361855, w: 0.9412262}
+  m_LocalPosition: {x: 0, y: -6.7800026, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6204,7 +6204,7 @@ ParticleSystem:
   m_GameObject: {fileID: 1357834649}
   serializedVersion: 5
   lengthInSec: 1
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -9049,6 +9049,10 @@ GameObject:
   - component: {fileID: 1494337320}
   - component: {fileID: 1494337319}
   - component: {fileID: 1494337324}
+  - component: {fileID: 1494337327}
+  - component: {fileID: 1494337326}
+  - component: {fileID: 1494337328}
+  - component: {fileID: 1494337325}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9153,6 +9157,106 @@ MonoBehaviour:
   Margin: 0.3
   OffsetY: 0.1
   TimeBeforeFollow: 1.5
+--- !u!114 &1494337325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1494337318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  intensity: 0.235
+  chromaticAberration: 1.5
+  axialAberration: 0.5
+  blur: 0.416
+  blurSpread: 0.75
+  luminanceDependency: 0.25
+  blurDistance: 2.5
+  vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
+  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
+  chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
+    type: 3}
+--- !u!114 &1494337326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1494337318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea59781cad112c75d0008dfa8d76c639, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 67f8781cad112c75d0008dfa8d76c639, type: 3}
+  textureRamp: {fileID: 2800000, guid: d440902fad11e807d00044888d76c639, type: 3}
+--- !u!114 &1494337327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1494337318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02536f33053638549ab5c50ff3ecc0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweakMode: 1
+  screenBlendMode: 1
+  hdr: 0
+  sepBlurSpread: 1.72
+  useSrcAlphaAsMask: 0
+  bloomIntensity: 1.5
+  bloomThreshold: 0.6
+  bloomBlurIterations: 2
+  lensflares: 0
+  hollywoodFlareBlurIterations: 2
+  lensflareMode: 1
+  hollyStretchWidth: 3.5
+  lensflareIntensity: 1
+  lensflareThreshold: 0.3
+  flareColorA: {r: 0.4, g: 0.4, b: 0.8, a: 0.75}
+  flareColorB: {r: 0.4, g: 0.8, b: 0.8, a: 0.75}
+  flareColorC: {r: 0.8, g: 0.4, b: 0.8, a: 0.75}
+  flareColorD: {r: 0.8, g: 0.4, b: 0, a: 0.75}
+  lensFlareVignetteMask: {fileID: 2800000, guid: 95ef4804fe0be4c999ddaa383536cde8,
+    type: 3}
+  lensFlareShader: {fileID: 4800000, guid: 459fe69d2f6d74ddb92f04dbf45a866b, type: 3}
+  vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
+  separableBlurShader: {fileID: 4800000, guid: a9df009a214e24a5ebbf271595f8d5b6, type: 3}
+  addBrightStuffOneOneShader: {fileID: 4800000, guid: f7898d203e9b94c0dbe2bf9dd5cb32c0,
+    type: 3}
+  screenBlendShader: {fileID: 4800000, guid: 53b3960ee3d3d4a5caa8d5473d120187, type: 3}
+  hollywoodFlaresShader: {fileID: 4800000, guid: e2baf3cae8edc4daf94c9adc2154be00,
+    type: 3}
+  brightPassFilterShader: {fileID: 4800000, guid: 186c4c0d31e314f049595dcbaf4ca129,
+    type: 3}
+--- !u!114 &1494337328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1494337318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60e318a6043c1cb4a8ce1c8805bab930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolution: 0
+  screenBlendMode: 1
+  sunTransform: {fileID: 0}
+  radialBlurIterations: 2
+  sunColor: {r: 0, g: 1, b: 0.54482746, a: 1}
+  sunThreshold: {r: 0.94482756, g: 0, b: 1, a: 1}
+  sunShaftBlurRadius: 3
+  sunShaftIntensity: 1.15
+  maxRadius: 0.39999998
+  useDepthTexture: 1
+  sunShaftsShader: {fileID: 4800000, guid: d3b1c8c1036784176946f5cfbfb7fe4c, type: 3}
+  simpleClearShader: {fileID: 4800000, guid: f688f89ed5eb847c5b19c934a0f1e772, type: 3}
 --- !u!1 &1500277782
 GameObject:
   m_ObjectHideFlags: 0
@@ -11077,7 +11181,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2083227563}
   serializedVersion: 5
   lengthInSec: 1
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
@@ -13864,7 +13968,7 @@ ParticleSystem:
   m_GameObject: {fileID: 2143168577}
   serializedVersion: 5
   lengthInSec: 5
-  speed: 1
+  simulationSpeed: 1
   looping: 1
   prewarm: 0
   playOnAwake: 1
